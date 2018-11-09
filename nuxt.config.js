@@ -32,6 +32,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    vendor: ['graphql-tag', 'apollo-client'],
     extractCSS: true,
     extend(config, ctx) {
       // Run ESLint on save
@@ -42,6 +43,16 @@ module.exports = {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         })
+      }
+    }
+  },
+  modules: [
+    '@nuxtjs/apollo'
+  ],
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpEndpoint: 'http://aok-backend.al:4000/graphql'
       }
     }
   }

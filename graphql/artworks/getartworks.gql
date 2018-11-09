@@ -1,0 +1,32 @@
+query getartworks($filter: String, $sort: String, $skip: Float, $limit: Float) {
+    getartworks(query: {
+        filter: $filter
+        sort: $sort
+        skip: $skip
+        limit: $limit
+    }) {
+        SearchItems {
+            _id
+            pictures
+            price
+            title
+            pledge
+            dateCreated
+            medium
+            charity {
+                _id
+                name
+            }
+            status
+            artist {
+                fullName
+            }
+            sellingPrice
+        }
+        TotalCount
+        PreviousPage
+        NextPage
+        Successful
+        Message
+    }
+}

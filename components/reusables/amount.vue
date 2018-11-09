@@ -1,6 +1,6 @@
 <template>
     <span>
-        {{currency}} {{amount}}
+        {{currency}}{{amount}}
     </span>
 </template>
 

@@ -97,13 +97,20 @@
 
 <script>
 /* eslint-disable */
-export default {};
+export default {
+  mounted() {
+    if(!localStorage.getItem('token')) {
+      localStorage.setItem('token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmQ2NWMyMmZiODVkODAyZmM0MTA2MmIiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE1NDEwMzg4NTYsImV4cCI6MTU0OTYzODg1Nn0.XhPLzhxW_9EXLm7aZ7bbTSPcsjh_jeWevy_kvgCl7U0')
+      this.$apolloHelpers.onLogin(localStorage.getItem('token'))
+    }
+  }
+}
 </script>
 
 
 <style>
 * {
-  font-family: "Nunito", "sans-serif";
+  font-family: 'Nunito', sans-serif;
 }
 ._btn {
   text-transform: none;

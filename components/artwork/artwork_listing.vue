@@ -1,6 +1,9 @@
 <template>
     <div class="listing">
-      <artwork-item />        
+      <div v-for="(item, index) in artworks" :key="index">
+        <artwork-item :artwork="item"/> 
+        <v-divider></v-divider>
+      </div>
     </div>
 </template>
 
@@ -10,8 +13,12 @@
 import ArtworkItemComp from "@/components/artwork/artwork_item";
 
 export default {
+  props: ['artworks'],
   components: {
     "artwork-item": ArtworkItemComp
+  },
+  mounted() {
+    console.log(this.artworks)
   }
 };
 </script>
